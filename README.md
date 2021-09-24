@@ -1,3 +1,6 @@
+https://shawnpchampion.github.io/leafletgsheets/
+
+
 # leaflet-gsheets
 ### Note for people who've forked this in the past ⚠️
 This previously used [Tabletop.js](https://github.com/jsoma/tabletop) but Google has changed their API, so I've switched this repo over to [PapaParse](https://github.com/mholt/PapaParse). Anyone using the old code should try to switch over!
