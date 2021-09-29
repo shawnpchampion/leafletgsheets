@@ -204,14 +204,18 @@ function addPoints(data) {
       extraClasses: "fa-rotate-0",
     });
     let icon3 = L.AwesomeMarkers.icon({
-      icon: "info-circle",
+      icon: "airbnb",
       iconColor: "white",
       markerColor: data[row].color,
       prefix: "fa",
       extraClasses: "fa-rotate-0",
     });
+    
     if (!markerType.includes("circle")) {
       marker.setIcon(icon);
+    }
+    if (data[row].color="green") {
+      marker.setIcon(icon3);
     }
   }
 }
