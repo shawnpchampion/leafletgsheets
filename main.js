@@ -214,7 +214,7 @@ function addPoints(data) {
     if (!markerType.includes("circle")) {
       marker.setIcon(icon);
     }
-    if (data[row].color="green") {
+    if (data[row].color == "green") {
       marker.setIcon(icon3);
     }
   }
