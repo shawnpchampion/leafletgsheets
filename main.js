@@ -24,7 +24,7 @@ let panelID = "my-info-panel";
  */
 function init() {
   // Create a new Leaflet map centered on the continental US
-  map = L.map("map").setView([19.409, -154.914], 16);
+  map = L.map("map").setView([19.409, -154.914], 17);
 
   // This is the Carto Positron basemap
   L.tileLayer(
@@ -196,27 +196,27 @@ function addPoints(data) {
       prefix: "fa",
       extraClasses: "fa-rotate-0",
     });
-    let icon2 = L.AwesomeMarkers.icon({
-      icon: "info-circle",
-      iconColor: "white",
-      markerColor: data[row].color,
-      prefix: "fa",
-      extraClasses: "fa-rotate-0",
-    });
-    let icon3 = L.AwesomeMarkers.icon({
-      icon: "airbnb",
-      iconColor: "white",
-      markerColor: data[row].color,
-      prefix: "fa",
-      extraClasses: "fa-rotate-0",
-    });
+  //  let icon2 = L.AwesomeMarkers.icon({
+  //    icon: "info-circle",
+  //    iconColor: "white",
+  //    markerColor: data[row].color,
+  //    prefix: "fa",
+  //    extraClasses: "fa-rotate-0",
+  //  });
+  //  let icon3 = L.AwesomeMarkers.icon({
+  //    icon: "airbnb",
+  //    iconColor: "white",
+  //    markerColor: data[row].color,
+  //    prefix: "fa",
+  //    extraClasses: "fa-rotate-0",
+  //  });
     
     if (!markerType.includes("circle")) {
       marker.setIcon(icon);
     }
-    if (data[row].color == "green") {
-      marker.setIcon(icon2);
-    }
+   // if (data[row].color == "green") {
+   //   marker.setIcon(icon2);
+   // }
   }
 }
 
