@@ -24,7 +24,7 @@ let panelID = "my-info-panel";
  */
 function init() {
   // Create a new Leaflet map centered on the continental US
-  map = L.map("map").setView([19.409, -154.914], 44);
+  map = L.map("map").setView([19.409, -154.914], 14);
 
   // This is the Carto Positron basemap
   L.tileLayer(
@@ -33,7 +33,7 @@ function init() {
       attribution:
         "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>",
       subdomains: "abcd",
-      maxZoom: 19,
+      maxZoom: 44,
     }
   ).addTo(map);
 
@@ -215,7 +215,7 @@ function addPoints(data) {
       marker.setIcon(icon);
     }
     if (data[row].color == "green") {
-      marker.setIcon(icon3);
+      marker.setIcon(icon2);
     }
   }
 }
