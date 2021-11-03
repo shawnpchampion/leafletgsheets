@@ -104,34 +104,34 @@ function addPoints(data) {
  * GeoJSON Features. Attempts to guess the geometry type
  * when a bare coordinates Array is supplied.
  */
-//function parseGeom(gj) {
+function parseGeom(gj) {
   // FeatureCollection
-//  if (gj.type == "FeatureCollection") {
-//    return gj.features;
-//  }
+  if (gj.type == "FeatureCollection") {
+    return gj.features;
+  }
 
   // Feature
-//  else if (gj.type == "Feature") {
-//    return [gj];
-//  }
+  else if (gj.type == "Feature") {
+    return [gj];
+  }
 
   // Geometry
-//  else if ("type" in gj) {
-//    return [{ type: "Feature", geometry: gj }];
-//  }
+  else if ("type" in gj) {
+    return [{ type: "Feature", geometry: gj }];
+  }
 
   // Coordinates
-//  else {
-//    let type;
-//    if (typeof gj[0] == "number") {
-//      type = "Point";
-//    } else if (typeof gj[0][0] == "number") {
-//      type = "LineString";
-//    } else if (typeof gj[0][0][0] == "number") {
-//      type = "Polygon";
-//    } else {
-//      type = "MultiPolygon";
-//    }
-//    return [{ type: "Feature", geometry: { type: type, coordinates: gj } }];
-//  }
-//}
+  else {
+    let type;
+    if (typeof gj[0] == "number") {
+      type = "Point";
+    } else if (typeof gj[0][0] == "number") {
+      type = "LineString";
+    } else if (typeof gj[0][0][0] == "number") {
+      type = "Polygon";
+    } else {
+      type = "MultiPolygon";
+    }
+    return [{ type: "Feature", geometry: { type: type, coordinates: gj } }];
+  }
+}
