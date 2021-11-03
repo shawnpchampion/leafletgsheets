@@ -48,38 +48,16 @@ function addPoints(data) {
   data = data.data;
   let pointGroupLayer = L.layerGroup().addTo(map);
 
-  // Choose marker type. Options are:
-  // (these are case-sensitive, defaults to marker!)
-  // marker: standard point with an icon
-  // circleMarker: a circle with a radius set in pixels
-  // circle: a circle with a radius set in meters
-//  let markerType = "marker";
-
-  // Marker radius
-  // Wil be in pixels for circleMarker, metres for circle
-  // Ignore for point
-//  let markerRadius = 100;
-
   for (let row = 0; row < data.length; row++) {
     let marker;
-//    if (markerType == "circleMarker") {
-//      marker = L.circleMarker([data[row].lat, data[row].lon], {
-//        radius: markerRadius,
-//      });
-//    } else if (markerType == "circle") {
-//      marker = L.circle([data[row].lat, data[row].lon], {
-//        radius: markerRadius,
-//      });
-//    } else {
-      marker = L.marker([data[row].lat, data[row].lon]);
-//    }
+
+    marker = L.marker([data[row].lat, data[row].lon]);
+
     marker.addTo(pointGroupLayer);
     marker.addTo(map);
 
-// UNCOMMENT THIS LINE TO USE POPUPS
-//    marker.bindPopup('<h2>' + data[row].name + '</h2>There's a ' + data[row].description + ' here');
+    marker.bindPopup('<h2>' + data[row].name + '</h2>There's a ' + data[row].description + ' here');
 
-    // COMMENT THE NEXT GROUP OF LINES TO DISABLE SIDEBAR FOR THE MARKERS
     marker.feature = {
       properties: {
         name: data[row].name,
@@ -96,6 +74,7 @@ function addPoints(data) {
 //        sidebar.open(panelID);
 //      },
 //    });
+
   }
 }
 
