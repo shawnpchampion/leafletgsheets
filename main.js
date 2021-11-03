@@ -56,7 +56,7 @@ function addPoints(data) {
     marker.addTo(pointGroupLayer);
     marker.addTo(map);
 
-    marker.bindPopup('<h2>' + data[row].name + '</h2>There's a ' + data[row].description + ' here');
+    marker.bindPopup('<h2>' + data[row].name + '</h2>Theres a ' + data[row].description + ' here');
 
     marker.feature = {
       properties: {
