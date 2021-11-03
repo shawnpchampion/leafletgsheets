@@ -53,31 +53,31 @@ function addPoints(data) {
   // marker: standard point with an icon
   // circleMarker: a circle with a radius set in pixels
   // circle: a circle with a radius set in meters
-  let markerType = "marker";
+//  let markerType = "marker";
 
   // Marker radius
   // Wil be in pixels for circleMarker, metres for circle
   // Ignore for point
-  let markerRadius = 100;
+//  let markerRadius = 100;
 
   for (let row = 0; row < data.length; row++) {
     let marker;
-    if (markerType == "circleMarker") {
-      marker = L.circleMarker([data[row].lat, data[row].lon], {
-        radius: markerRadius,
-      });
-    } else if (markerType == "circle") {
-      marker = L.circle([data[row].lat, data[row].lon], {
-        radius: markerRadius,
-      });
-    } else {
+//    if (markerType == "circleMarker") {
+//      marker = L.circleMarker([data[row].lat, data[row].lon], {
+//        radius: markerRadius,
+//      });
+//    } else if (markerType == "circle") {
+//      marker = L.circle([data[row].lat, data[row].lon], {
+//        radius: markerRadius,
+//      });
+//    } else {
       marker = L.marker([data[row].lat, data[row].lon]);
     }
     marker.addTo(pointGroupLayer);
     marker.addTo(map);
 
 // UNCOMMENT THIS LINE TO USE POPUPS
-    //marker.bindPopup('<h2>' + data[row].name + '</h2>There's a ' + data[row].description + ' here');
+    marker.bindPopup('<h2>' + data[row].name + '</h2>There's a ' + data[row].description + ' here');
 
     // COMMENT THE NEXT GROUP OF LINES TO DISABLE SIDEBAR FOR THE MARKERS
     marker.feature = {
@@ -96,37 +96,6 @@ function addPoints(data) {
 //        sidebar.open(panelID);
 //      },
 //    });
-// COMMENT UNTIL HERE TO DISABLE SIDEBAR FOR THE MARKERS
-
-    // AwesomeMarkers is used to create fancier icons
-//    let icon = L.AwesomeMarkers.icon({
-//      icon: "ad",
-//      iconColor: "white",
-//      markerColor: data[row].color,
-//      prefix: "fa",
-//      extraClasses: "fa-rotate-0",
-//    });
-  //  let icon2 = L.AwesomeMarkers.icon({
-  //    icon: "info-circle",
-  //    iconColor: "white",
-  //    markerColor: data[row].color,
-  //    prefix: "fa",
-  //    extraClasses: "fa-rotate-0",
-  //  });
-  //  let icon3 = L.AwesomeMarkers.icon({
-  //    icon: "airbnb",
-  //    iconColor: "white",
-  //    markerColor: data[row].color,
-  //    prefix: "fa",
-  //    extraClasses: "fa-rotate-0",
-  //  });
-    
-//    if (!markerType.includes("circle")) {
-//      marker.setIcon(icon);
-//    }
-   // if (data[row].color == "green") {
-   //   marker.setIcon(icon2);
-   // }
   }
 }
 
@@ -135,34 +104,34 @@ function addPoints(data) {
  * GeoJSON Features. Attempts to guess the geometry type
  * when a bare coordinates Array is supplied.
  */
-function parseGeom(gj) {
+//function parseGeom(gj) {
   // FeatureCollection
-  if (gj.type == "FeatureCollection") {
-    return gj.features;
-  }
+//  if (gj.type == "FeatureCollection") {
+//    return gj.features;
+//  }
 
   // Feature
-  else if (gj.type == "Feature") {
-    return [gj];
-  }
+//  else if (gj.type == "Feature") {
+//    return [gj];
+//  }
 
   // Geometry
-  else if ("type" in gj) {
-    return [{ type: "Feature", geometry: gj }];
-  }
+//  else if ("type" in gj) {
+//    return [{ type: "Feature", geometry: gj }];
+//  }
 
   // Coordinates
-  else {
-    let type;
-    if (typeof gj[0] == "number") {
-      type = "Point";
-    } else if (typeof gj[0][0] == "number") {
-      type = "LineString";
-    } else if (typeof gj[0][0][0] == "number") {
-      type = "Polygon";
-    } else {
-      type = "MultiPolygon";
-    }
-    return [{ type: "Feature", geometry: { type: type, coordinates: gj } }];
-  }
-}
+//  else {
+//    let type;
+//    if (typeof gj[0] == "number") {
+//      type = "Point";
+//    } else if (typeof gj[0][0] == "number") {
+//      type = "LineString";
+//    } else if (typeof gj[0][0][0] == "number") {
+//      type = "Polygon";
+//    } else {
+//      type = "MultiPolygon";
+//    }
+//    return [{ type: "Feature", geometry: { type: type, coordinates: gj } }];
+//  }
+//}
