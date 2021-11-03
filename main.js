@@ -16,8 +16,8 @@ let pointsURL =
 window.addEventListener("DOMContentLoaded", init);
 
 let map;
-let sidebar;
-let panelID = "my-info-panel";
+//let sidebar;
+//let panelID = "my-info-panel";
 
 /*
  * init() is called when the page has loaded
@@ -37,25 +37,25 @@ function init() {
     }
   ).addTo(map);
 
-  sidebar = L.control
-    .sidebar({
-      container: "sidebar",
-      closeButton: true,
-      position: "right",
-    })
-    .addTo(map);
+//  sidebar = L.control
+//    .sidebar({
+//      container: "sidebar",
+//      closeButton: true,
+//      position: "right",
+//    })
+//    .addTo(map);
 
-  let panelContent = {
-    id: panelID,
-    tab: "<i class='fa fa-bars active'></i>",
-    pane: "<p id='sidebar-content'></p>",
-    title: "<h2 id='sidebar-title'>Nothing selected</h2>",
-  };
-  sidebar.addPanel(panelContent);
+//  let panelContent = {
+//    id: panelID,
+//    tab: "<i class='fa fa-bars active'></i>",
+//    pane: "<p id='sidebar-content'></p>",
+//    title: "<h2 id='sidebar-title'>Nothing selected</h2>",
+//  };
+//  sidebar.addPanel(panelContent);
 
-  map.on("click", function () {
-    sidebar.close(panelID);
-  });
+//  map.on("click", function () {
+//    sidebar.close(panelID);
+//  });
 
   // Use PapaParse to load data from Google Sheets
   // And call the respective functions to add those to the map.
@@ -165,6 +165,7 @@ function addPoints(data) {
       marker = L.marker([data[row].lat, data[row].lon]);
     }
     marker.addTo(pointGroupLayer);
+    marker.addTo(map);
 
     // UNCOMMENT THIS LINE TO USE POPUPS
     //marker.bindPopup('<h2>' + data[row].name + '</h2>There's a ' + data[row].description + ' here');
@@ -176,16 +177,16 @@ function addPoints(data) {
         description: data[row].description,
       },
     };
-    marker.on({
-      click: function (e) {
-        L.DomEvent.stopPropagation(e);
-        document.getElementById("sidebar-title").innerHTML =
-          e.target.feature.properties.name;
-        document.getElementById("sidebar-content").innerHTML =
-          e.target.feature.properties.description;
-        sidebar.open(panelID);
-      },
-    });
+//    marker.on({
+//      click: function (e) {
+//        L.DomEvent.stopPropagation(e);
+//        document.getElementById("sidebar-title").innerHTML =
+//          e.target.feature.properties.name;
+//        document.getElementById("sidebar-content").innerHTML =
+//          e.target.feature.properties.description;
+//        sidebar.open(panelID);
+//      },
+//    });
     // COMMENT UNTIL HERE TO DISABLE SIDEBAR FOR THE MARKERS
 
     // AwesomeMarkers is used to create fancier icons
