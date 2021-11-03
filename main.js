@@ -1,32 +1,27 @@
-/* global L Papa */
-
 /*
- * Script to display two tables from Google Sheets as point and geometry layers using Leaflet
+ * Script to display table from Google Sheets as points using Leaflet
  * The Sheets are then imported using PapaParse and overwrite the initially laded layers
  */
 
-// PASTE YOUR URLs HERE
-// these URLs come from Google Sheets 'shareable link' form
-// the first is the geometry layer and the second the points
-//let geomURL =
-//  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSRJKtICjAZ1wVuTgAIuqUvLoxiKd6F2opu_ciDnBD-NC4bghleLMBMNJHfrchTyaUR0uKDtT5PtwFC/pub?output=csv";
+// Add Google Sheets URL
+
 let pointsURL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRq35W4ymM2dngELMMGscT6ZRALftOa049JBipA2ZSbLVe7HXLGlByzqFCfs7dqnTs7Sedc9HsdttBJ/pub?output=csv";
 
 window.addEventListener("DOMContentLoaded", init);
 
 let map;
-//let sidebar;
-//let panelID = "my-info-panel";
 
 /*
  * init() is called when the page has loaded
  */
+
 function init() {
-  // Create a new Leaflet map centered on the continental US
+  
+// Create a new Leaflet map and add a baselayer
+
   map = L.map("map").setView([19.409, -154.914], 17);
 
-  // This is the Carto Positron basemap
   L.tileLayer(
     "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png",
     {
@@ -37,33 +32,9 @@ function init() {
     }
   ).addTo(map);
 
-//  sidebar = L.control
-//    .sidebar({
-//      container: "sidebar",
-//      closeButton: true,
-//      position: "right",
-//    })
-//    .addTo(map);
 
-//  let panelContent = {
-//    id: panelID,
-//    tab: "<i class='fa fa-bars active'></i>",
-//    pane: "<p id='sidebar-content'></p>",
-//    title: "<h2 id='sidebar-title'>Nothing selected</h2>",
-//  };
-//  sidebar.addPanel(panelContent);
+// Use PapaParse to load data from Google Sheets
 
-//  map.on("click", function () {
-//    sidebar.close(panelID);
-//  });
-
-  // Use PapaParse to load data from Google Sheets
-  // And call the respective functions to add those to the map.
-//  Papa.parse(geomURL, {
-//    download: true,
-//    header: true,
-//    complete: addGeoms,
-//  });
   Papa.parse(pointsURL, {
     download: true,
     header: true,
@@ -71,70 +42,8 @@ function init() {
   });
 }
 
-/*
- * Expects a JSON representation of the table with properties columns
- * and a 'geometry' column that can be parsed by parseGeom()
- */
-//function addGeoms(data) {
-//  data = data.data;
-  // Need to convert the PapaParse JSON into a GeoJSON
-  // Start with an empty GeoJSON of type FeatureCollection
-  // All the rows will be inserted into a single GeoJSON
-// let fc = {
-//    type: "FeatureCollection",
-//    features: [],
-//  };
+//Add all the points to a single Layer Group
 
-//  for (let row in data) {
-    // The Sheets data has a column 'include' that specifies if that row should be mapped
-//    if (data[row].include == "y") {
-//      let features = parseGeom(JSON.parse(data[row].geometry));
-//      features.forEach((el) => {
-//        el.properties = {
-//          name: data[row].name,
-//          description: data[row].description,
-//        };
-//        fc.features.push(el);
-//      });
-//    }
-//  }
-
-  // The geometries are styled slightly differently on mouse hovers
-//  let geomStyle = { color: "#2ca25f", fillColor: "#99d8c9", weight: 2 };
-//  let geomHoverStyle = { color: "green", fillColor: "#2ca25f", weight: 3 };
-
-//  L.geoJSON(fc, {
-//    onEachFeature: function (feature, layer) {
-//      layer.on({
-//        mouseout: function (e) {
-//          e.target.setStyle(geomStyle);
-//        },
-//        mouseover: function (e) {
-//          e.target.setStyle(geomHoverStyle);
-//        },
-//        click: function (e) {
-          // This zooms the map to the clicked geometry
-          // Uncomment to enable
-          // map.fitBounds(e.target.getBounds());
-
-          // if this isn't added, then map.click is also fired!
-//          L.DomEvent.stopPropagation(e);
-
-//          document.getElementById("sidebar-title").innerHTML =
-//            e.target.feature.properties.name;
-//          document.getElementById("sidebar-content").innerHTML =
-//            e.target.feature.properties.description;
-//          sidebar.open(panelID);
-//        },
-//      });
-//    },
-//    style: geomStyle,
-//  }).addTo(map);
-//}
-
-/*
- * addPoints is a bit simpler, as no GeoJSON is needed for the points
- */
 function addPoints(data) {
   data = data.data;
   let pointGroupLayer = L.layerGroup().addTo(map);
@@ -167,7 +76,7 @@ function addPoints(data) {
     marker.addTo(pointGroupLayer);
     marker.addTo(map);
 
-    // UNCOMMENT THIS LINE TO USE POPUPS
+// UNCOMMENT THIS LINE TO USE POPUPS
     //marker.bindPopup('<h2>' + data[row].name + '</h2>There's a ' + data[row].description + ' here');
 
     // COMMENT THE NEXT GROUP OF LINES TO DISABLE SIDEBAR FOR THE MARKERS
@@ -187,16 +96,16 @@ function addPoints(data) {
 //        sidebar.open(panelID);
 //      },
 //    });
-    // COMMENT UNTIL HERE TO DISABLE SIDEBAR FOR THE MARKERS
+// COMMENT UNTIL HERE TO DISABLE SIDEBAR FOR THE MARKERS
 
     // AwesomeMarkers is used to create fancier icons
-    let icon = L.AwesomeMarkers.icon({
-      icon: "ad",
-      iconColor: "white",
-      markerColor: data[row].color,
-      prefix: "fa",
-      extraClasses: "fa-rotate-0",
-    });
+//    let icon = L.AwesomeMarkers.icon({
+//      icon: "ad",
+//      iconColor: "white",
+//      markerColor: data[row].color,
+//      prefix: "fa",
+//      extraClasses: "fa-rotate-0",
+//    });
   //  let icon2 = L.AwesomeMarkers.icon({
   //    icon: "info-circle",
   //    iconColor: "white",
@@ -212,9 +121,9 @@ function addPoints(data) {
   //    extraClasses: "fa-rotate-0",
   //  });
     
-    if (!markerType.includes("circle")) {
-      marker.setIcon(icon);
-    }
+//    if (!markerType.includes("circle")) {
+//      marker.setIcon(icon);
+//    }
    // if (data[row].color == "green") {
    //   marker.setIcon(icon2);
    // }
