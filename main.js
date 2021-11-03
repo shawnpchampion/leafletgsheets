@@ -72,7 +72,7 @@ function addPoints(data) {
 //      });
 //    } else {
       marker = L.marker([data[row].lat, data[row].lon]);
-    }
+//    }
     marker.addTo(pointGroupLayer);
     marker.addTo(map);
 
