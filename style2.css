@@ -6,7 +6,7 @@
 body {
     font-family: 'Poppins', sans-serif;
 /*    background: #fafafa; */
-    background: #000;
+    background: #FF0000;
     padding: 0;
     
 }
@@ -65,7 +65,7 @@ a:focus {
 .wrapper {
     display: flex;
     width: 100%;
-    background-color: #000;
+    background-color: #0000FF;
 }
 
 #sidebar {
@@ -171,7 +171,7 @@ a.article:hover {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #000;
+    background-color: #00FF00;
 }
 
 #content.active {
