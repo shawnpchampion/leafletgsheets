@@ -34,7 +34,7 @@ a:focus {
 /*    margin-bottom: 50%; */
 /*    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); */
     position: absolute;
-    bottom: 10%;
+    bottom: 20%;
     left: 2%;
     right: 2%;
     z-index: 999;
