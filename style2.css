@@ -100,7 +100,7 @@ a:focus {
 }
 
 #sidebar ul p {
-    color: #000;
+    color: #fffaef;
     padding: 10px;
 }
 
@@ -136,7 +136,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #fff;
+    background: #D1AD54;
 }
 
 ul.CTAs {
