@@ -22,8 +22,8 @@ function init() {
 
 //  map = L.map("map").setView([19.409, -154.914], 17).attributionControl: false.zoomControl: false;
     map = L.map('map', {
-          center: new L.LatLng(19.407, -154.914),
-          zoom: 17,
+          center: new L.LatLng(19.409, -154.914),
+          zoom: 16,
           attributionControl: false,
           zoomControl: false
         });
