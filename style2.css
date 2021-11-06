@@ -184,6 +184,7 @@ a.article:hover {
     width: 100vw;
     height: 100vh;
     z-index: 998;
+    margin-bottom: 0;
 }
 
 /* ---------------------------------------------------
