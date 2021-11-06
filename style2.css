@@ -59,6 +59,18 @@ a:focus {
     margin: 40px 0;
 }
 
+.btn-info {
+    color: #fff;
+    background-color: ##450D21;
+    border-color: ##450D21;
+}
+
+.btn-info:hover {
+    color: #fff;
+    background-color: #D1AD54;
+    border-color: #D1AD54;
+}
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
