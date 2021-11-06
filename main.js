@@ -28,6 +28,7 @@ function init() {
           center: new L.LatLng(19.409, -154.914),
           zoom: 16,
           attributionControl: false,
+          tap: false,
           zoomControl: false
         });  
 
