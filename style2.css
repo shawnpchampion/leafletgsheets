@@ -201,8 +201,5 @@ a.article:hover {
     }
     #sidebarCollapse span {
         display: none;
-    }
-    #navbar {
-        margin-bottom: 100px;
-    }    
+    }   
 }
