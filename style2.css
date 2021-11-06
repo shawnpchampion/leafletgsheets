@@ -26,8 +26,7 @@ a:focus {
 }
 
 .navbar {
-    padding: 15px 10px;
-/*    padding: 0px!important; */
+    padding: 15px 0px;
     background-color: transparent!important;
     border: none;
     border-radius: 0;
