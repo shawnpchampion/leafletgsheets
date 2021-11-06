@@ -198,7 +198,7 @@ a.article:hover {
     }
     #content {
         width: 100%;
-        background-color: #000;
+        background-color: #FFFF00;
     }
     #content.active {
         width: calc(100% - 250px);
