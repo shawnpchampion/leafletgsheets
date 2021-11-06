@@ -29,7 +29,7 @@ function init() {
           zoom: 16,
           attributionControl: false,
           tap: false,
-          dragging: false,
+//          dragging: false,
 //          dragging: !L.Browser.mobile,
 //          tap: !L.Browser.mobile,
           zoomControl: false
