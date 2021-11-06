@@ -5,7 +5,8 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+/*    background: #fafafa; */
+    background: #000;
     padding: 0;
     
 }
@@ -64,6 +65,7 @@ a:focus {
 .wrapper {
     display: flex;
     width: 100%;
+    background-color: #000;
 }
 
 #sidebar {
@@ -169,6 +171,7 @@ a.article:hover {
     position: absolute;
     top: 0;
     right: 0;
+    background-color: #000;
 }
 
 #content.active {
@@ -195,6 +198,7 @@ a.article:hover {
     }
     #content {
         width: 100%;
+        background-color: #000;
     }
     #content.active {
         width: calc(100% - 250px);
