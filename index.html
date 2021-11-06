@@ -1,41 +1,75 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
         
-        <title>Leaflet web map with Google Sheets</title>
+    <title>Leaflet web map with Google Sheets</title>
         
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
 <!-- Bootstrap CSS CDN -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        <link rel="stylesheet" href="bootstrap-side-modals.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">     <link rel="stylesheet" href="bootstrap-side-modals.css">
+    <link rel="stylesheet" href="css/bootstrap-side-modals.css">
+<!-- Google Maps API Key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFupEV3m1KmMBb9VjGbzt3FcY2VZZx5yE" async defer></script>   
+ 
+<!-- Leaflet (CSS and JS) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+  
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+<!-- Google Mutant Plugin JS -->
+<!-- Must come after Leaflet CSS and/or? JS -->
+    <script src="https://unpkg.com/leaflet.gridlayer.googlemutant@latest/dist/Leaflet.GoogleMutant.js"></script>
+    
+<!-- PapaParse -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+    
+<!--    <script src="js/papaparse.min.js"></script> -->
+   
+<!-- leaflet-providers-->
+    <script src="https://unpkg.com/leaflet-providers@1.10.2/leaflet-providers.js"></script>
+
+<!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style2.css">
+   
+<!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+<!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+                          
+    <style>
         
-        <link rel="stylesheet" href="css/leaflet.css"/>
-        <link rel="stylesheet" href="css/font-awesome.min.css"/>                 
-        <link rel="stylesheet" href="css/leaflet.awesome-markers.css"/>          
-                
-        <style>
 body {
     padding: 0;
     margin: 0;
 }
+        
 html, body, #map {
     height: 100%;
     width: 100%;
 }
-        </style>
-
-    </head>
-    
-    <body>
-        <div id="map"></div>
         
-        <script src="js/leaflet.js"></script>
-        <script src="js/leaflet.awesome-markers.min.js"></script>        
-        <script src="js/papaparse.min.js"></script>
-        <script src="main.js"></script>
-    </body>
+    </style>
+
+</head>
+    
+<body>
+    
+    <div id="map">
+    </div>
+                
+    
+    <script src="main.js">
+    </script>
+    
+</body>
     
 </html>
