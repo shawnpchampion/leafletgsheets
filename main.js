@@ -20,13 +20,23 @@ function init() {
   
 // Create a new Leaflet map and add a baselayer
 
+//To fix map issue
+    const mapDiv = document.getElementById("map");
+  
 //  map = L.map("map").setView([19.409, -154.914], 17).attributionControl: false.zoomControl: false;
     map = L.map('map', {
           center: new L.LatLng(19.409, -154.914),
           zoom: 16,
           attributionControl: false,
           zoomControl: false
-        });
+        });  
+
+//To fix map issue
+    const resizeObserver = new ResizeObserver(() => {
+        map.invalidateSize();
+    });
+
+    resizeObserver.observe(mapDiv);  
   
   L.tileLayer(
     "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png",
