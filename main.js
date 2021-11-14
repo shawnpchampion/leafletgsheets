@@ -64,8 +64,12 @@ function addPoints(data) {
 
   for (let row = 0; row < data.length; row++) {
     let marker;
-
-    marker = L.marker([data[row].lat, data[row].lon]);
+    
+    var icon = L.icon({
+     iconUrl: data[row].micon
+    });
+    
+    marker = L.marker([data[row].lat, data[row].lon], {icon: icon});
 
     marker.addTo(pointGroupLayer);
 //    marker.on('click', markerOnClick);
