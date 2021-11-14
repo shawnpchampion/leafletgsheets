@@ -256,5 +256,5 @@ a.text-info:hover, a.text-info:focus {
 .show > .btn-info.dropdown-toggle {
   color: #fff;
   background-color: #000000 !important;
-  border-color: #10707f;
+  border-color: #fff !important;
 }
