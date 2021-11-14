@@ -236,3 +236,11 @@ a.article:hover {
         margin-bottom: 70px;
     }    
 }
+
+.text-info {
+  color: #000000 !important;
+}
+
+a.text-info:hover, a.text-info:focus {
+  color: #000000 !important;
+}
