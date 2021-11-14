@@ -76,7 +76,7 @@ function addPoints(data) {
     marker.addTo(pointGroupLayer);
     marker.addTo(map);
 
-    marker.bindPopup('<h2>' + data[row].name + '</h2>Theres a ' + data[row].description + ' here');
+//    marker.bindPopup('<h2>' + data[row].name + '</h2>Theres a ' + data[row].description + ' here');
 
     marker.feature = {
       properties: {
@@ -85,16 +85,16 @@ function addPoints(data) {
       },
     };
 
-//    marker.on({
-//      click: function (e) {
-//        L.DomEvent.stopPropagation(e);
-//        document.getElementById("sidebar-title").innerHTML =
-//          e.target.feature.properties.name;
-//        document.getElementById("sidebar-content").innerHTML =
-//          e.target.feature.properties.description;
-//        sidebar.open(panelID);
-//      },
-//    });
+    marker.on({
+      click: function (e) {
+        L.DomEvent.stopPropagation(e);
+        document.getElementById("sidebar-title").innerHTML =
+          e.target.feature.properties.name;
+        document.getElementById("sidebar-content").innerHTML =
+          e.target.feature.properties.description;
+        sidebar.open(panelID);
+      },
+    });
 
   }
 }
