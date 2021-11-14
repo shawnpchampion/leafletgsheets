@@ -9,6 +9,7 @@
             clearText: 'clear', // the text of the clear button
             filterOnEveryClick: false, // if set as true the plugin do filtering operation on every click event on the checkboxes
             openPopupOnHover: false, // if set as true the popup that contains tags will be open at mouse hover time
+            position: 'topright',
 
             ajaxData: null // it can be used for remote data TODO: implement it!
         },
