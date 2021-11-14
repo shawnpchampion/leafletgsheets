@@ -49,7 +49,6 @@ function init() {
   
   L.control.tagFilterButton({
         data: ['fast', 'slow', 'none'],
-        position: 'topright',
         filterOnEveryClick: true
     }).addTo(map);
 
