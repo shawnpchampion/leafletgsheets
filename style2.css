@@ -255,6 +255,6 @@ a.text-info:hover, a.text-info:focus {
 .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
 .show > .btn-info.dropdown-toggle {
   color: #fff;
-  background-color: #000000 !important;
-  border-color: #fff !important;
+  background-color: #D1AD54 !important;
+  border-color: #D1AD54 !important;
 }
