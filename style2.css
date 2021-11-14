@@ -266,5 +266,5 @@ a.text-info:hover, a.text-info:focus {
 }
 
 .tag-filter-tags-container {
-  right: 30px !important;
+  left: 100px !important;
 }
