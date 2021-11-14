@@ -43,7 +43,7 @@ function init() {
       attribution:
         "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>",
       subdomains: "abcd",
-      maxZoom: 44,
+      maxZoom: 20,
     }
   ).addTo(map);
 
