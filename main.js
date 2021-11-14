@@ -66,7 +66,8 @@ function addPoints(data) {
     let marker;
     
     var icon = L.icon({
-     iconUrl: data[row].micon
+     iconUrl: data[row].micon,
+     iconSize: [24, 24]
     });
     
     marker = L.marker([data[row].lat, data[row].lon], {icon: icon});
