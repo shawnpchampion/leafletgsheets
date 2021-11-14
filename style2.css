@@ -258,3 +258,9 @@ a.text-info:hover, a.text-info:focus {
   background-color: #D1AD54 !important;
   border-color: #D1AD54 !important;
 }
+
+.btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus,
+.show > .btn-info.dropdown-toggle:focus {
+/*  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5); */
+  box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%) !important;
+}
