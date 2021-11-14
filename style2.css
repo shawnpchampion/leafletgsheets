@@ -72,12 +72,12 @@ a:focus {
 }
 
 .btn-info.focus, .btn-info:focus {
-    /* box-shadow: 0 0 0 0.2rem rgb(23 162 184 / 50%); */
+     box-shadow: 0 0 0 0.2rem rgb(23 162 184 / 0%);
 }
 
 .btn.focus, .btn:focus {
     /* outline: 0; */
-    /* box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%); */
+     box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
 }
 
 /* ---------------------------------------------------
@@ -249,7 +249,7 @@ a.text-info:hover, a.text-info:focus {
   z-index: 2;
   color: #fff;
   background-color: #007bff;
-  border-color: #007bff;
+  border-color: #000000 !important;
 }
 
 .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
