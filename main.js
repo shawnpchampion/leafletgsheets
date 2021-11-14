@@ -92,7 +92,7 @@ function addPoints(data) {
           e.target.feature.properties.name;
         document.getElementById("sidebar-content").innerHTML =
           e.target.feature.properties.description;
-        sidebar.open(panelID);
+//        sidebar.open(panelID);
       },
     });
 
