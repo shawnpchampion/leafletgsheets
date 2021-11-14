@@ -17,13 +17,10 @@ let map;
  */
 
 function init() {
-  
-// Create a new Leaflet map and add a baselayer
 
-//To fix map issue
+// To fix map issue
 //    const mapDiv = document.getElementById("map");
   
-//  map = L.map("map").setView([19.409, -154.914], 17).attributionControl: false.zoomControl: false;
     map = L.map('map', {
           center: new L.LatLng(19.409, -154.914),
           zoom: 16,
@@ -35,7 +32,7 @@ function init() {
           zoomControl: false
         });  
 
-//To fix map issue
+// To fix map issue
 //    const resizeObserver = new ResizeObserver(() => {
 //        map.invalidateSize();
 //    });
@@ -74,6 +71,7 @@ function addPoints(data) {
     marker = L.marker([data[row].lat, data[row].lon]);
 
     marker.addTo(pointGroupLayer);
+    marker.on('click', markerOnClick);
     marker.addTo(map);
 
 //    marker.bindPopup('<h2>' + data[row].name + '</h2>Theres a ' + data[row].description + ' here');
@@ -85,16 +83,30 @@ function addPoints(data) {
       },
     };
 
-    marker.on({
-      click: function (e) {
-        L.DomEvent.stopPropagation(e);
-        document.getElementById("sidebar-title").innerHTML =
-          e.target.feature.properties.name;
-        document.getElementById("sidebar-content").innerHTML =
-          e.target.feature.properties.description;
+    function markerOnClick(e)
+      {
+//        var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Hawaiian Name:</th><td>" + this.options.hname + "</td></tr>" + "<tr><th>Canoe Plant:</th><td>" + this.options.cplant + "</td></tr>" + "<tr><th>Description:</th><td>" + this.options.descript + "</td></tr>" + "<tr><th>Harvest:</th><td>" + this.options.harvest + "</td></tr>" + "<table>";
+        $("#feature-title").html(this.feature.properties.name);
+        $("#feature-info").html(this.feature.properties.description);
+        $("#bottom_modal").modal("show");	  
+//            var bgimgurlm = 'url(' + this.options.bimage + ')';
+//            var divm = document.getElementById("bgimage");
+//            divm.style.backgroundImage = bgimgurlm;
+//            divm.style.backgroundRepeat = "no-repeat";
+//            divm.style.backgroundSize = "contain";  
+      }    
+    
+    
+//    marker.on({
+//      click: function (e) {
+//        L.DomEvent.stopPropagation(e);
+//        document.getElementById("sidebar-title").innerHTML =
+//          e.target.feature.properties.name;
+//        document.getElementById("sidebar-content").innerHTML =
+//          e.target.feature.properties.description;
 //        sidebar.open(panelID);
-      },
-    });
+//      },
+//    });
 
   }
 }
