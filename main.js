@@ -71,7 +71,7 @@ function addPoints(data) {
 //    marker.on('click', markerOnClick);
     marker.addTo(map);
 
-    marker.bindPopup('<h2>' + data[row].name + '</h2>Theres a ' + data[row].description + ' here');
+    marker.bindPopup('<h6>' + data[row].name + '</h6>');
 
     marker.feature = {
       properties: {
