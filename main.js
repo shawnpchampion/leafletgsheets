@@ -46,6 +46,11 @@ function init() {
       maxZoom: 20,
     }
   ).addTo(map);
+  
+  L.control.tagFilterButton({
+        data: ['fast', 'slow', 'none'],
+        filterOnEveryClick: true
+    }).addTo(map);
 
 // Use PapaParse to load data from Google Sheets
 
@@ -113,7 +118,4 @@ function addPoints(data) {
   }
 }
 
-L.control.tagFilterButton({
-        data: ['fast', 'slow', 'none'],
-        filterOnEveryClick: true
-    }).addTo( map );
+
