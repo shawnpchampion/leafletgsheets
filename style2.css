@@ -234,6 +234,12 @@ a.article:hover {
     }       
 }
 
+@media (max-width: 480px) {
+    #navbar {
+        margin-bottom: 70px;
+    }       
+}
+
 .text-info {
   color: #000000 !important;
 }
