@@ -47,14 +47,20 @@ function init() {
     }
   ).addTo(map);
   
-  L.control.tagFilterButton({
+  var zoin = L.control.tagFilterButton({
         data: ['fast', 'slow', 'none'],
         filterOnEveryClick: true
-  }).addTo(map);
-
-L.easyButton('fa-star', function(){
+//  }).addTo(map);
+  });
+  
+var zoout = L.easyButton('fa-star', function(){
   alert('you just clicked the html entity');
-}).addTo(map);
+// }).addTo(map);
+});
+  
+var zoomBar = L.easyBar([ zoin, zoout, ]);
+
+zoomBar.addTo(map);
   
 // Use PapaParse to load data from Google Sheets
 
