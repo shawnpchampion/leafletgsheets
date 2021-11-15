@@ -57,17 +57,18 @@ function init() {
 //    alert('you just clicked the html entity');
 //  }).addTo(map);
 
-     var icons = L.icon({
-     
-     iconSize: [24, 24]
-    });
-    L.marker([19.4078370, -154.9123511], { tags: ['tomato', 'active'], icon: '<i class="fa fa-suitcase"></i>' }).addTo(map); 
-    L.marker([19.4078970, -154.9123511], { tags: ['tomato', 'ended'], icon: '<i class="fa fa-suitcase"></i>' }).addTo(map);
-    L.marker([19.4078870, -154.9123511], { tags: ['tomato', 'ended'], icon: '<i class="fa fa-suitcase"></i>' }).addTo(map);
-    L.marker([19.4078770, -154.9123511], { tags: ['strawberry', 'active'], icon: '<i class="fa fa-suitcase"></i>' }).addTo(map);
-    L.marker([19.4078670, -154.9123511], { tags: ['strawberry', 'ended'], icon: '<i class="fa fa-suitcase"></i>' }).addTo(map);
-    L.marker([19.4078570, -154.9123511], { tags: ['cherry', 'active'], icon: '<i class="fa fa-suitcase"></i>' }).addTo(map);
-    L.marker([19.4078470, -154.9123511], { tags: ['cherry', 'ended'], icon: '<i class="fa fa-suitcase"></i>'}).addTo(map);
+var firefoxIcon = L.icon({
+        iconUrl: 'http://joshuafrazier.info/images/firefox.svg',
+        iconSize: [38, 95], // size of the icon
+        });
+
+    L.marker([19.4078370, -154.9123511], {icon: firefoxIcon}, { tags: ['tomato', 'active'] }).addTo(map); 
+    L.marker([19.4078970, -154.9123511], {icon: firefoxIcon}, { tags: ['tomato', 'ended'] }).addTo(map);
+    L.marker([19.4078870, -154.9123511], {icon: firefoxIcon}, { tags: ['tomato', 'ended'] }).addTo(map);
+    L.marker([19.4078770, -154.9123511], {icon: firefoxIcon}, { tags: ['strawberry', 'active'] }).addTo(map);
+    L.marker([19.4078670, -154.9123511], {icon: firefoxIcon}, { tags: ['strawberry', 'ended'] }).addTo(map);
+    L.marker([19.4078570, -154.9123511], {icon: firefoxIcon}, { tags: ['cherry', 'active'] }).addTo(map);
+    L.marker([19.4078470, -154.9123511], {icon: firefoxIcon}, { tags: ['cherry', 'ended'] }).addTo(map);
 
      var statusFilterButton = L.control.tagFilterButton({
         data: ['active', 'ended'],
