@@ -53,7 +53,7 @@ function init() {
         filterOnEveryClick: true
     }).addTo(map);
 
-L.easyButton(function(){
+L.easyButton('fa-star', function(){
   alert('you just clicked the html entity');
 }).addTo(map);
   
