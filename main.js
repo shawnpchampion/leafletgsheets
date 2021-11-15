@@ -47,46 +47,44 @@ function init() {
     }
   ).addTo(map);
   
-//  L.control.tagFilterButton({
-//        data: ['fast', 'slow', 'none'],
-//        filterOnEveryClick: true
-//  }).addTo(map);
   
-  
+ // Single Easy Button
+
 //  L.easyButton('fa-star', function(){
 //    alert('you just clicked the html entity');
 //  }).addTo(map);
+  
+  
+// Single Tag Filter Button
+  
+//  L.control.tagFilterButton({
+//        data: ['fast', 'slow', 'none'],
+//        icon: '<i class="fa fa-rocket"></i>',
+//        filterOnEveryClick: true
+//  }).addTo(map);
+  
+// Linked Tag Filter Buttons  
 
+//     var statusFilterButton = L.control.tagFilterButton({
+//        data: ['fast', 'slow'],
+//      filterOnEveryClick: true,
+//      icon: '<i class="fa fa-suitcase"></i>',
+//    }).addTo(map);
 
-     var statusFilterButton = L.control.tagFilterButton({
-        data: ['fast', 'slow'],
-      filterOnEveryClick: true,
-      icon: '<i class="fa fa-suitcase"></i>',
-    }).addTo(map);
+//    var foodFilterButton = L.control.tagFilterButton({
+//        data: ['tomato', 'cherry', 'strawberry'],
+//      filterOnEveryClick: true,
+//        icon: '<i class="fa fa-rocket"></i>',
+//    }).addTo(map);
 
-    var foodFilterButton = L.control.tagFilterButton({
-        data: ['tomato', 'cherry', 'strawberry'],
-      filterOnEveryClick: true,
-        icon: '<i class="fa fa-rocket"></i>',
-    }).addTo(map);
+//    foodFilterButton.addToReleated(statusFilterButton);
 
-    foodFilterButton.addToReleated(statusFilterButton);
-
-    jQuery('.easy-button-button').click(function() {
-        target = jQuery('.easy-button-button').not(this);
-        target.parent().find('.tag-filter-tags-container').css({
-            'display' : 'none',
-        });
-    });
-  
-  
-  
-  
-  
-  
-  
-  
-  
+//    jQuery('.easy-button-button').click(function() {
+//        target = jQuery('.easy-button-button').not(this);
+//        target.parent().find('.tag-filter-tags-container').css({
+//            'display' : 'none',
+//        });
+//    });
   
   
 // Use PapaParse to load data from Google Sheets
