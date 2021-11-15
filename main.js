@@ -71,7 +71,7 @@ var firefoxIcon = L.icon({
     L.marker([19.4078470, -154.9123511], { tags: ['cherry', 'ended'], icon: firefoxIcon }).addTo(map);
 
      var statusFilterButton = L.control.tagFilterButton({
-        data: ['active', 'ended'],
+        data: ['fast', 'slow'],
       filterOnEveryClick: true,
       icon: '<i class="fa fa-suitcase"></i>',
     }).addTo(map);
@@ -124,7 +124,7 @@ function addPoints(data) {
      iconSize: [24, 24]
     });
     
-    marker = L.marker([data[row].lat, data[row].lon], { tags:[data[row].speed], icon: icon});
+    marker = L.marker([data[row].lat, data[row].lon], { tags:[data[row].food, data[row].speed], icon: icon});
 
     marker.addTo(pointGroupLayer);
 //    marker.on('click', markerOnClick);
