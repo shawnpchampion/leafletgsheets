@@ -57,14 +57,17 @@ function init() {
 //    alert('you just clicked the html entity');
 //  }).addTo(map);
 
-  
-    L.marker([50.521, 30.52], { tags: ['tomato', 'active'] }).addTo(map); 
-    L.marker([50.487, 30.54], { tags: ['tomato', 'ended'] }).addTo(map);
-    L.marker([50.533, 30.5], { tags: ['tomato', 'ended'] }).addTo(map);
-    L.marker([50.54, 30.48], { tags: ['strawberry', 'active'] }).addTo(map);
-    L.marker([50.505, 30.46], { tags: ['strawberry', 'ended'] }).addTo(map);
-    L.marker([50.5, 30.43], { tags: ['cherry', 'active'] }).addTo(map);
-    L.marker([50.48, 30.5], { tags: ['cherry', 'ended'] }).addTo(map);
+     var icons = L.icon({
+     
+     iconSize: [24, 24]
+    });
+    L.marker([19.4078370, -154.9123511], { tags: ['tomato', 'active'], icon: '<i class="fa fa-suitcase"></i>' }).addTo(map); 
+    L.marker([19.4078970, -154.9123511], { tags: ['tomato', 'ended'], icon: '<i class="fa fa-suitcase"></i>' }).addTo(map);
+    L.marker([19.4078870, -154.9123511], { tags: ['tomato', 'ended'], icon: '<i class="fa fa-suitcase"></i>' }).addTo(map);
+    L.marker([19.4078770, -154.9123511], { tags: ['strawberry', 'active'], icon: '<i class="fa fa-suitcase"></i>' }).addTo(map);
+    L.marker([19.4078670, -154.9123511], { tags: ['strawberry', 'ended'], icon: '<i class="fa fa-suitcase"></i>' }).addTo(map);
+    L.marker([19.4078570, -154.9123511], { tags: ['cherry', 'active'], icon: '<i class="fa fa-suitcase"></i>' }).addTo(map);
+    L.marker([19.4078470, -154.9123511], { tags: ['cherry', 'ended'], icon: '<i class="fa fa-suitcase"></i>'}).addTo(map);
 
      var statusFilterButton = L.control.tagFilterButton({
         data: ['active', 'ended'],
@@ -75,7 +78,7 @@ function init() {
     var foodFilterButton = L.control.tagFilterButton({
         data: ['tomato', 'cherry', 'strawberry'],
       filterOnEveryClick: true,
-        icon: '<i class="fa fa-pagelines"></i>',
+        icon: '<i class="fa fa-rocket"></i>',
     }).addTo(map);
 
     foodFilterButton.addToReleated(statusFilterButton);
