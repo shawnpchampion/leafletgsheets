@@ -57,18 +57,6 @@ function init() {
 //    alert('you just clicked the html entity');
 //  }).addTo(map);
 
-var firefoxIcon = L.icon({
-        iconUrl: 'http://joshuafrazier.info/images/firefox.svg',
-        iconSize: [38, 95], // size of the icon
-        });
-
-    L.marker([19.4078370, -154.9123511], { tags: ['tomato', 'active'], icon: firefoxIcon }).addTo(map); 
-    L.marker([19.4078970, -154.9123511], { tags: ['tomato', 'ended'], icon: firefoxIcon }).addTo(map);
-    L.marker([19.4078870, -154.9123511], { tags: ['tomato', 'ended'], icon: firefoxIcon }).addTo(map);
-    L.marker([19.4078770, -154.9123511], { tags: ['strawberry', 'active'], icon: firefoxIcon }).addTo(map);
-    L.marker([19.4078670, -154.9123511], { tags: ['strawberry', 'ended'], icon: firefoxIcon }).addTo(map);
-    L.marker([19.4078570, -154.9123511], { tags: ['cherry', 'active'], icon: firefoxIcon }).addTo(map);
-    L.marker([19.4078470, -154.9123511], { tags: ['cherry', 'ended'], icon: firefoxIcon }).addTo(map);
 
      var statusFilterButton = L.control.tagFilterButton({
         data: ['fast', 'slow'],
