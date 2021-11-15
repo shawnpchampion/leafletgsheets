@@ -48,51 +48,10 @@ function init() {
   ).addTo(map);
   
   L.control.tagFilterButton({
+        position: 'topright',
         data: ['fast', 'slow', 'none'],
         filterOnEveryClick: true
     }).addTo(map);
-  
-  
-  
-        var nexrad = new L.tileLayer.wms("https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
-            layers: 'nexrad-n0r',
-            format: 'image/png',
-            transparent: true,
-            attribution: "Weather data &copy; 2015 IEM Nexrad"
-        });
-
-        //Alerts
-        var alert1 = L.polygon([
-            [45.825833, -91.891111],
-            [45.535833, -92.023333],
-            [45.498333, -92.638889],
-            [46.498333, -92.638889]
-        ], {
-            color: 'yellow',
-            fillColor: 'yellow',
-            fillOpacity: 0.6
-        });
-
-
-        var alert2 = L.polygon([
-            [45.825833, -91.891111],
-            [45.498333, -91.738889],
-            [45.535833, -92.023333]
-        ], {
-            color: 'red',
-            fillColor: 'red',
-            fillOpacity: 0.5
-        });
-
-        //feature groups
-        var alerts = L.layerGroup([alert1, alert2]);
-  
-          var overlayMaps = {
-            "Alerts": alerts,
-            "Radar": nexrad
-        };
-  
-  L.control.layers(null, overlayMaps).addTo(map);
 
 
 // Use PapaParse to load data from Google Sheets
