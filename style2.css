@@ -266,23 +266,27 @@ a.text-info:hover, a.text-info:focus {
 }
 
 .tag-filter-tags-container {
-  left:  !important;
+  left: 4%  !important;
 }
 
 .leaflet-bar span.filter-info-box {
     position: fixed !important;
-    left: 20% !important;
+    left: 3% !important;
 }        
 
 .leaflet-touch .leaflet-bar button {
     position: fixed !important;
-    left: 20% !important;
+    left: 3% !important;
 }
 
 .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
     border: 0px solid rgba(0,0,0,0.2) !important;
 }
 
+.leaflet-touch .leaflet-control-layers-toggle {
+	width: 36px !important;
+	height: 36px !important;
+	}
 .leaflet-bar button, .leaflet-bar button:hover {
     background-color: #fff;
     border: 2px solid rgba(0,0,0,0.2) !important;
@@ -295,6 +299,6 @@ a.text-info:hover, a.text-info:focus {
     text-align: center;
     text-decoration: none;
     color: black;
-/*    position: fixed; */
-/*    left: 20%; */
+    position: fixed;
+    left: 3%; 
 }
