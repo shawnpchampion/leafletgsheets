@@ -49,7 +49,6 @@ function init() {
   
   L.control.tagFilterButton({
         data: ['fast', 'slow', 'none'],
-        icon: '<img src="filter.png">',
         filterOnEveryClick: true
   }).addTo(map);
 
