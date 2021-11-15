@@ -232,11 +232,14 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }       
+    #navbar {
+        margin-bottom: 70px;
+    }    
 }
 
 @media (max-width: 480px) {
     #navbar {
-        margin-bottom: 70px;
+        margin-bottom: 170px;
     }       
 }
 
