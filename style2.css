@@ -271,3 +271,9 @@ left: auto !important;
 right: 10px !important;
 }
 
+.tag-filter-tags-container {
+  position: absolute !important;
+left: auto !important;
+right: 30px !important;
+}
+
