@@ -107,9 +107,13 @@ function addPoints(data) {
   for (let row = 0; row < data.length; row++) {
     let marker;
     
+    var iconSize = data[row].miconsize;  
+      
+    var size = [parseInt(iconSize.split('x')[0]), parseInt(iconSize.split('x')[1])];
+    
     var icon = L.icon({
      iconUrl: data[row].micon,
-     iconSize: [24, 24]
+     iconSize: size
     });
     
     marker = L.marker([data[row].lat, data[row].lon], { tags:[data[row].food, data[row].speed], icon: icon});
