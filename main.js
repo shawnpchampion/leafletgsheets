@@ -53,7 +53,10 @@ function init() {
         filterOnEveryClick: true
     }).addTo(map);
 
-
+L.easyButton(function(){
+  alert('you just clicked the html entity');
+}).addTo(map);
+  
 // Use PapaParse to load data from Google Sheets
 
   Papa.parse(pointsURL, {
