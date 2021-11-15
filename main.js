@@ -47,13 +47,11 @@ function init() {
     }
   ).addTo(map);
   
-  L.control.tagFilterButton({data: ['fast', 'slow', 'none'],
-        filterOnEveryClick: true
-    }, {position: 'topright'}).addTo(map);
+  L.control.tagFilterButton({position: 'topright'}).addTo(map);
 
 L.easyButton('fa-star', function(){
   alert('you just clicked the html entity');
-}, {position: 'topright'}).addTo(map);
+}, {position: 'bottomright'}).addTo(map);
   
 // Use PapaParse to load data from Google Sheets
 
