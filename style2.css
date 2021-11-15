@@ -274,3 +274,6 @@ left: auto !important;
 right: 30px !important;
 }
 
+.easy-button-button {
+  display: block !important;
+}
