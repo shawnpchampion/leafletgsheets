@@ -54,7 +54,7 @@ function init() {
 
 L.easyButton('fa-star', function(){
   alert('you just clicked the html entity');
-}, {position: 'bottomright'}).addTo(map);
+}).addTo(map);
   
 // Use PapaParse to load data from Google Sheets
 
