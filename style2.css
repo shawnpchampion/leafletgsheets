@@ -33,7 +33,7 @@ a:focus {
     background-color: transparent!important;
     border: none;
     border-radius: 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 /*    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); */
     position: absolute;
     bottom: 0;
@@ -231,10 +231,7 @@ a.article:hover {
     }
     #sidebarCollapse span {
         display: none;
-    }   
-    .navbar {
-        margin-bottom: 70px;
-    }    
+    }       
 }
 
 .text-info {
