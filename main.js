@@ -57,11 +57,11 @@ function init() {
   
 // Single Tag Filter Button
   
-//  L.control.tagFilterButton({
-//        data: ['fast', 'slow', 'none'],
-//        icon: '<i class="fa fa-rocket"></i>',
-//        filterOnEveryClick: true
-//  }).addTo(map);
+  L.control.tagFilterButton({
+        data: ['fast', 'slow', 'none'],
+        icon: '<i class="fa fa-rocket"></i>',
+        filterOnEveryClick: true
+  }).addTo(map);
   
 // Linked Tag Filter Buttons  
 
