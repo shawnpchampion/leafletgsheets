@@ -265,4 +265,9 @@ a.text-info:hover, a.text-info:focus {
   box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%) !important;
 }
 
+.leaflet-control-container .leaflet-top.leaflet-left { 
+position: absolute !important;
+left: auto !important;
+right: 10px !important;
+}
 
