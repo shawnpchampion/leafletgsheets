@@ -288,9 +288,9 @@ a.text-info:hover, a.text-info:focus {
     border: 2px solid rgba(0,0,0,0.2) !important;
   /*  border: none; */
     border-bottom: 1px solid #ccc;
-    width: 26px;
-    height: 26px;
-    line-height: 26px;
+    width: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;
     display: block;
     text-align: center;
     text-decoration: none;
