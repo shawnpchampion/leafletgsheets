@@ -47,11 +47,9 @@ function init() {
     }
   ).addTo(map);
   
-  L.control.tagFilterButton({
-        position: 'topright',
-        data: ['fast', 'slow', 'none'],
+  L.control.tagFilterButton({data: ['fast', 'slow', 'none'],
         filterOnEveryClick: true
-    }).addTo(map);
+    }, {position: 'topright'}).addTo(map);
 
 L.easyButton('fa-star', function(){
   alert('you just clicked the html entity');
