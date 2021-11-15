@@ -53,10 +53,48 @@ function init() {
   }).addTo(map);
   
   
-L.easyButton('fa-star', function(){
-  alert('you just clicked the html entity');
-}).addTo(map);
+//  L.easyButton('fa-star', function(){
+//    alert('you just clicked the html entity');
+//  }).addTo(map);
 
+  
+    L.marker([50.521, 30.52], { tags: ['tomato', 'active'] }).addTo(map); 
+    L.marker([50.487, 30.54], { tags: ['tomato', 'ended'] }).addTo(map);
+    L.marker([50.533, 30.5], { tags: ['tomato', 'ended'] }).addTo(map);
+    L.marker([50.54, 30.48], { tags: ['strawberry', 'active'] }).addTo(map);
+    L.marker([50.505, 30.46], { tags: ['strawberry', 'ended'] }).addTo(map);
+    L.marker([50.5, 30.43], { tags: ['cherry', 'active'] }).addTo(map);
+    L.marker([50.48, 30.5], { tags: ['cherry', 'ended'] }).addTo(map);
+
+     var statusFilterButton = L.control.tagFilterButton({
+        data: ['active', 'ended'],
+      filterOnEveryClick: true,
+      icon: '<i class="fa fa-suitcase"></i>',
+    }).addTo(map);
+
+    var foodFilterButton = L.control.tagFilterButton({
+        data: ['tomato', 'cherry', 'strawberry'],
+      filterOnEveryClick: true,
+        icon: '<i class="fa fa-pagelines"></i>',
+    }).addTo(map);
+
+    foodFilterButton.addToReleated(statusFilterButton);
+
+    jQuery('.easy-button-button').click(function() {
+        target = jQuery('.easy-button-button').not(this);
+        target.parent().find('.tag-filter-tags-container').css({
+            'display' : 'none',
+        });
+    });
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
 // Use PapaParse to load data from Google Sheets
