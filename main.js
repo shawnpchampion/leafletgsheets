@@ -47,10 +47,10 @@ function init() {
     }
   ).addTo(map);
   
-  L.control.tagFilterButton({
-        data: ['fast', 'slow', 'none'],
-        filterOnEveryClick: true
-  }).addTo(map);
+//  L.control.tagFilterButton({
+//        data: ['fast', 'slow', 'none'],
+//        filterOnEveryClick: true
+//  }).addTo(map);
   
   
 //  L.easyButton('fa-star', function(){
