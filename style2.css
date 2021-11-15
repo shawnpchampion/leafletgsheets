@@ -266,7 +266,7 @@ a.text-info:hover, a.text-info:focus {
 }
 
 .tag-filter-tags-container {
-  left: 100px !important;
+  right: 100px !important;
 }
 
 .leaflet-bar span.filter-info-box {
