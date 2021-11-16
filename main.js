@@ -8,6 +8,26 @@
 let pointsURL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRq35W4ymM2dngELMMGscT6ZRALftOa049JBipA2ZSbLVe7HXLGlByzqFCfs7dqnTs7Sedc9HsdttBJ/pub?output=csv";
 
+
+      var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+      maxZoom: 20,
+      subdomains:['mt0','mt1','mt2','mt3']
+      });
+                
+            $("#satbtn").click(function() {
+                  map.addLayer(googleSat);
+            });    
+            
+            $("#mapbtn").click(function() {
+                  map.removeLayer(googleSat);
+            });
+            
+//            $("#list-btn").click(function() {
+//              animateSidebar();
+//              return false;
+//            });
+
+
 window.addEventListener("DOMContentLoaded", init);
 
 let map;
