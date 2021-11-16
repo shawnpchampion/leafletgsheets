@@ -58,7 +58,7 @@ function init() {
 // Single Tag Filter Button
   
   L.control.tagFilterButton({
-        data: ['fast', 'slow', 'none'],
+        data: ['Avocado', 'Banana', 'Ulu', 'Mango', 'Other', 'Papaya', 'Lilikoi', 'Jackfruit', 'Citurs'],
         icon: '<i class="fa fa-rocket"></i>',
         filterOnEveryClick: true
   }).addTo(map);
@@ -114,7 +114,7 @@ function addPoints(data) {
      iconSize: size
     });
     
-    marker = L.marker([data[row].lat, data[row].lon], { tags:[data[row].food, data[row].speed], icon: icon});
+    marker = L.marker([data[row].lat, data[row].lon], { tags:[data[row].group, icon: icon});
 
     marker.addTo(pointGroupLayer);
 //    marker.on('click', markerOnClick);
