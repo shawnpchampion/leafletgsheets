@@ -92,7 +92,7 @@ a:focus {
     position: fixed;
     top: 0;
     left: 0;
-/*    height: 100vh; */
+    height: 100vh;
 /*    height: 100%; */
     z-index: 999;
     background: #3a0b1c; /*Burgundy*/
