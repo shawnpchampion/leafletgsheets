@@ -114,7 +114,7 @@ function addPoints(data) {
      iconSize: size
     });
     
-    marker = L.marker([data[row].lat, data[row].lon], { tags:[data[row].group, icon: icon});
+    marker = L.marker([data[row].lat, data[row].lon], { tags:[data[row].group], icon: icon});
 
     marker.addTo(pointGroupLayer);
 //    marker.on('click', markerOnClick);
