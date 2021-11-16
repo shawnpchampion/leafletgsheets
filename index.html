@@ -183,20 +183,7 @@
                 $('#sidebar, #content').toggleClass('active');
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            });
-            
-              var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-      maxZoom: 20,
-      subdomains:['mt0','mt1','mt2','mt3']
-  });
-                
-            $('#satbtn').click(funtion(event) {
-                  map.addLayer(googleSat);
             });    
-            
-            $('#mapbtn').click(funtion(event) {
-                  map.removeLayer(googleSat);
-            }); 
         });
             
     </script>
