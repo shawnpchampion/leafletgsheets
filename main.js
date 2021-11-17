@@ -8,25 +8,18 @@
 let pointsURL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRq35W4ymM2dngELMMGscT6ZRALftOa049JBipA2ZSbLVe7HXLGlByzqFCfs7dqnTs7Sedc9HsdttBJ/pub?output=csv";
 
-
-      var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-      maxZoom: 20,
-      subdomains:['mt0','mt1','mt2','mt3']
-      });
+var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+  maxZoom: 20,
+  subdomains:['mt0','mt1','mt2','mt3']
+});
                 
-            $("#satbtn").click(function() {
-                  map.addLayer(googleSat);
-            });    
+$("#satbtn").click(function() {
+  map.addLayer(googleSat);
+});    
             
-            $("#mapbtn").click(function() {
-                  map.removeLayer(googleSat);
-            });
-            
-//            $("#list-btn").click(function() {
-//              animateSidebar();
-//              return false;
-//            });
-
+$("#mapbtn").click(function() {
+  map.removeLayer(googleSat);
+});
 
 window.addEventListener("DOMContentLoaded", init);
 
@@ -37,75 +30,70 @@ let map;
 function init() {
 
 // To fix map issue
-//    const mapDiv = document.getElementById("map");
+//  const mapDiv = document.getElementById("map");
   
-    map = L.map('map', {
-          center: new L.LatLng(19.409, -154.914),
-          zoom: 16,
-          attributionControl: false,
-//          tap: false,
-//          dragging: false,
-//          dragging: !L.Browser.mobile,
-//          tap: !L.Browser.mobile,
-          zoomControl: false
-        });  
+  map = L.map('map', {
+    center: new L.LatLng(19.409, -154.914),
+    zoom: 16,
+    attributionControl: false,
+    tap: false,
+//    dragging: false,
+//    dragging: !L.Browser.mobile,
+//    tap: !L.Browser.mobile,
+    zoomControl: false
+  });  
 
 // To fix map issue
-//    const resizeObserver = new ResizeObserver(() => {
-//        map.invalidateSize();
-//    });
+//  const resizeObserver = new ResizeObserver(() => {
+//    map.invalidateSize();
+//  });
 
-//    resizeObserver.observe(mapDiv);  
+//  resizeObserver.observe(mapDiv);  
   
   L.tileLayer(
-    "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png",
-    {
-      attribution:
-        "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>",
+    "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png",{
+      attribution:"&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>",
       subdomains: "abcd",
       maxZoom: 20,
     }
   ).addTo(map);
   
-  
- // Single Easy Button
-
+// Single Easy Button
+   
 //  L.easyButton('fa-star', function(){
 //    alert('you just clicked the html entity');
 //  }).addTo(map);
   
-  
 // Single Tag Filter Button
   
   L.control.tagFilterButton({
-        data: ['Avocado', 'Banana', 'Ulu', 'Mango', 'Other', 'Papaya', 'Lilikoi', 'Jackfruit', 'Citurs'],
-        icon: '<i class="fa fa-rocket"></i>',
-        filterOnEveryClick: true
+    data: ['Avocado', 'Banana', 'Ulu', 'Mango', 'Other', 'Papaya', 'Lilikoi', 'Jackfruit', 'Citurs'],
+    icon: '<i class="fa fa-rocket"></i>',
+    filterOnEveryClick: true
   }).addTo(map);
   
 // Linked Tag Filter Buttons  
 
-//     var statusFilterButton = L.control.tagFilterButton({
-//        data: ['fast', 'slow'],
-//      filterOnEveryClick: true,
-//      icon: '<i class="fa fa-suitcase"></i>',
-//    }).addTo(map);
+//  var statusFilterButton = L.control.tagFilterButton({
+//    data: ['fast', 'slow'],
+//    filterOnEveryClick: true,
+//    icon: '<i class="fa fa-suitcase"></i>',
+//  }).addTo(map);
 
-//    var foodFilterButton = L.control.tagFilterButton({
-//        data: ['tomato', 'cherry', 'strawberry'],
-//      filterOnEveryClick: true,
-//        icon: '<i class="fa fa-rocket"></i>',
-//    }).addTo(map);
+//  var foodFilterButton = L.control.tagFilterButton({
+//    data: ['tomato', 'cherry', 'strawberry'],
+//    filterOnEveryClick: true,
+//    icon: '<i class="fa fa-rocket"></i>',
+//  }).addTo(map);
 
-//    foodFilterButton.addToReleated(statusFilterButton);
+//  foodFilterButton.addToReleated(statusFilterButton);
 
-//    jQuery('.easy-button-button').click(function() {
-//        target = jQuery('.easy-button-button').not(this);
-//        target.parent().find('.tag-filter-tags-container').css({
-//            'display' : 'none',
-//        });
+//  jQuery('.easy-button-button').click(function() {
+//    target = jQuery('.easy-button-button').not(this);
+//    target.parent().find('.tag-filter-tags-container').css({
+//      'display' : 'none',
 //    });
-  
+//  });
   
 // Use PapaParse to load data from Google Sheets
 
@@ -114,9 +102,9 @@ function init() {
     header: true,
     complete: addPoints,
   });
-}
+} 
 
-//Add all the points to a single Layer Group and to the map
+// Add all the points to a single Layer Group and to the map
 
 function addPoints(data) {
   data = data.data;
