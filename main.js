@@ -29,21 +29,23 @@ let map;
 
 function init() {
 
-// To fix map issue
-//  const mapDiv = document.getElementById("map");
+// To fix map issues
+  
+//const mapDiv = document.getElementById("map");
   
   map = L.map('map', {
     center: new L.LatLng(19.409, -154.914),
     zoom: 16,
+    zoomControl: false
     attributionControl: false,
     tap: false,
 //    dragging: false,
 //    dragging: !L.Browser.mobile,
 //    tap: !L.Browser.mobile,
-    zoomControl: false
   });  
 
-// To fix map issue
+// To fix map issues
+  
 //  const resizeObserver = new ResizeObserver(() => {
 //    map.invalidateSize();
 //  });
@@ -58,17 +60,18 @@ function init() {
     }
   ).addTo(map);
   
-// Single Easy Button
-   
-//  L.easyButton('fa-star', function(){
-//    alert('you just clicked the html entity');
-//  }).addTo(map);
   
 // Single Tag Filter Button
   
   L.control.tagFilterButton({
-    data: ['Avocado', 'Banana', 'Ulu', 'Mango', 'Other', 'Papaya', 'Lilikoi', 'Jackfruit', 'Citurs'],
+    data: ['Avocado', 'Banana', 'Ulu', 'Mango', 'Other', 'Papaya', 'Lilikoi', 'Jackfruit', 'Citrus'],
     icon: '<i class="fa fa-rocket"></i>',
+    filterOnEveryClick: true
+  }).addTo(map);
+  
+  L.control.tagFilterButton({
+    data: ['Yes', 'No'],
+    icon: '<i class="fa fa-map"></i>',
     filterOnEveryClick: true
   }).addTo(map);
   
@@ -122,7 +125,7 @@ function addPoints(data) {
      iconSize: size
     });
     
-    marker = L.marker([data[row].lat, data[row].lon], { tags:[data[row].group], icon: icon});
+    marker = L.marker([data[row].lat, data[row].lon], { tags:[data[row].group, data[row].CPlant], icon: icon});
 
     marker.addTo(pointGroupLayer);
 //    marker.on('click', markerOnClick);
