@@ -21,12 +21,6 @@ $("#mapbtn").click(function() {
   map.removeLayer(googleSat);
 });
 
-  var locationControl = L.control.locate({
-      keepCurrentZoomLevel: true,
-      returnToPrevBounds: true,
-      position: 'bottomright'
-  }).addTo(map);
-
 window.addEventListener("DOMContentLoaded", init);
 
 let map;
@@ -80,6 +74,11 @@ function init() {
     icon: '<i class="fa fa-leaf"></i>',
     filterOnEveryClick: true
   }).addTo(map);
+  
+  
+  L.easyButton( 'fa-rocket',  function(){
+    alert("good show");	
+  }, {position: 'bottomright'}).addTo(map);
   
 // Linked Tag Filter Buttons  
 
