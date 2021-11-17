@@ -21,6 +21,12 @@ $("#mapbtn").click(function() {
   map.removeLayer(googleSat);
 });
 
+  var locationControl = L.control.locate({
+      keepCurrentZoomLevel: true,
+      returnToPrevBounds: true,
+      position: 'bottomright'
+  }).addTo(map);
+
 window.addEventListener("DOMContentLoaded", init);
 
 let map;
