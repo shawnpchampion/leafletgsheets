@@ -36,9 +36,9 @@ function init() {
   map = L.map('map', {
     center: new L.LatLng(19.409, -154.914),
     zoom: 16,
-    zoomControl: false
+    zoomControl: false,
     attributionControl: false,
-    tap: false,
+    tap: false
 //    dragging: false,
 //    dragging: !L.Browser.mobile,
 //    tap: !L.Browser.mobile,
