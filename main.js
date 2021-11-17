@@ -75,11 +75,6 @@ function init() {
     filterOnEveryClick: true
   }).addTo(map);
   
-  
-  L.easyButton( 'fa-rocket',  function(){
-    alert("good show");	
-  }, {position: 'bottomright'}).addTo(map);
-  
 // Linked Tag Filter Buttons  
 
 //  var statusFilterButton = L.control.tagFilterButton({
