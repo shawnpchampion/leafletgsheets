@@ -71,7 +71,7 @@ function init() {
   
   L.control.tagFilterButton({
     data: ['Yes', 'No'],
-    icon: '<i class="fa fa-envira"></i>',
+    icon: '<i class="fab fa-envira"></i>',
     filterOnEveryClick: true
   }).addTo(map);
   
