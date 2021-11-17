@@ -286,7 +286,3 @@ a.text-info:hover, a.text-info:focus {
 .easy-button-button {
   display: block !important;
 }
-
-.leaflet-bottom {
-    padding-bottom: 15px !important;
-}
