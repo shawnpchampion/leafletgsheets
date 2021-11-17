@@ -265,20 +265,22 @@ a.text-info:hover, a.text-info:focus {
 
 .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus,
 .show > .btn-info.dropdown-toggle:focus {
-/*  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5); */
   box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%) !important;
 }
 
+
+/* Repositions the 'topleft' setting to be in the 'top-right' area instead. This is a fix for tag-filter/easy buttons */
 .leaflet-control-container .leaflet-top.leaflet-left { 
-position: absolute !important;
-left: auto !important;
-right: 10px !important;
+  position: absolute !important;
+  left: auto !important;
+  right: 10px !important;
 }
 
+/* Repositions tag filter popout */
 .tag-filter-tags-container {
   position: absolute !important;
-left: auto !important;
-right: 30px !important;
+  left: auto !important;
+  right: 30px !important;
 }
 
 .easy-button-button {
